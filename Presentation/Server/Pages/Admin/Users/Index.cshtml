@@ -58,6 +58,7 @@
 						<a asp-page="Delete" asp-route-Id="@(user.Id)" type="button" class="btn btn-danger">@(Resources.ButtonCaptions.Delete)</a>
 						<a asp-page="../Categories/Index" asp-route-userId="@(user.Id)" type="button" class="btn btn-primary">@(Resources.ButtonCaptions.Categories)</a>
 					</div>
+						<a asp-page="../Charts/Index" asp-route-userId="@(user.Id)" type="button" class="btn btn-success">گزارش گیری</a>
 				</td>
 			</tr>
 		}

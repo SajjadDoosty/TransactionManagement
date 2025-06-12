@@ -43,5 +43,13 @@ public class IndexModel
         //var e = await transactionApplication.GetAllAsync(Guid.Parse("3A008C58-6BDC-417B-B13C-1F7CDA84C36A"));
 
         //var f = await transactionApplication.GetAllGroupByCategoryAsync(Guid.Parse("3A008C58-6BDC-417B-B13C-1F7CDA84C36A"));
+
+        var a = await transactionApplication.CreateAsync(new Application.Aggregates.Transactions.ViewModels.CreateViewModel()
+        {
+            Amount = 10000,
+            Type = TransactionType.INCOME,
+            UserId = Guid.Parse("F29E9216-5380-45EB-8F34-F45F1A5D0850"),
+            CategoryId = Guid.Parse("AD123497-5246-4911-8C9D-0B1A8A386682"),
+        }, new DateTimeOffset(new DateTime(2025, 6, 12)));
     }
 }

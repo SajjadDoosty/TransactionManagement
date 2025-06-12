@@ -20,7 +20,7 @@ public static class MaxLength
 
 	public const int Icon = 100;
 
-	public const int Amount = 100_000_000;
+	public const decimal Amount = 100_000_000;
 
 	public const int Username = 20;
     public const int Password = 20;

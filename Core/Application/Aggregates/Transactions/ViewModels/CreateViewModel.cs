@@ -20,8 +20,8 @@ public class CreateViewModel
         ErrorMessageResourceType = typeof(Resources.Messages.Validations),
         ErrorMessageResourceName = nameof(Resources.Messages.Validations.Required))]
     [Range
-        (minimum: Constants.MinLength.Amount,
-        maximum: Constants.MaxLength.Amount,
+        (minimum: (double)Constants.MinLength.Amount,
+        maximum: (double)Constants.MaxLength.Amount,
         ErrorMessageResourceType = typeof(Resources.Messages.Validations),
         ErrorMessageResourceName = nameof(Resources.Messages.Validations.Range))]
 

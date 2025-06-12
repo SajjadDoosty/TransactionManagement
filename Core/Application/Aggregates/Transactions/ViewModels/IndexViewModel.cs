@@ -24,6 +24,20 @@ public class IndexViewModel : UpdateViewModel
         (Name = nameof(DataDictionary.InsertDateTime),
         ResourceType = typeof(DataDictionary))]
 
+    public DateTime InsertDateTimes
+    {
+        get
+        {
+            return DateTimeOffset.FromUnixTimeMilliseconds(InsertDateTime).DateTime;
+        }
+    }
+    // **********
+
+    // **********
+    [Display
+        (Name = nameof(DataDictionary.InsertDateTime),
+        ResourceType = typeof(DataDictionary))]
+
     public string InsertDateTimeFa
     {
         get

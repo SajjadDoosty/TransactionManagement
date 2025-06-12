@@ -4,7 +4,6 @@ using Application.Aggregates.Transactions.ViewModels;
 using Application.Aggregates.Users;
 using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Server.Pages.Admin.Transactions;
 
@@ -28,7 +27,7 @@ public class CreateModel
         var userResult =
             await userApplication.GetAsync(userId.Value);
 
-        var category = userResult.Data!;
+        var category = categoryResult.Data!;
         var user = userResult.Data!;
 
         if (!categoryResult.IsSuccessful
@@ -68,6 +67,6 @@ public class CreateModel
         AddToastSuccess(message);
 
         return RedirectToPage("Index",
-            new { categoryId = ViewModel.CategoryId });
+            new { userId = ViewModel.UserId, categoryId = ViewModel.CategoryId });
     }
 }

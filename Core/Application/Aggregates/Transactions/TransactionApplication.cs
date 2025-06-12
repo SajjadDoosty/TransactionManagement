@@ -1,7 +1,7 @@
 ﻿using Application.Aggregates.Categories;
 using Application.Aggregates.Transactions.ViewModels;
 using Domain.Aggregates.Transactions;
-using Domain.Aggregates.Transactions.Enums;
+using Domain.Aggregates.Users;
 using Framework.DataType;
 using Mapster;
 using Microsoft.EntityFrameworkCore;
@@ -14,7 +14,7 @@ public class TransactionApplication
     (DatabaseContext database, UnitOfWork unitOfWork,
     CategoryApplication categoryApplication)
 {
-    public async Task<ResultContract> CreateAsync(CreateViewModel viewModel)
+    public async Task<ResultContract> CreateAsync(CreateViewModel viewModel, DateTimeOffset? dateTime = null)
     {
         var result =
             Transaction.Create(viewModel.Amount, viewModel.Type, viewModel.UserId, viewModel.CategoryId);
@@ -25,6 +25,11 @@ public class TransactionApplication
         if (result.IsSuccessful == false || newTransaction == null)
         {
             return result;
+        }
+
+        if (dateTime != null)
+        {
+            newTransaction.SetInsertDateTime(dateTime.Value);
         }
 
         await database.Transactions.AddAsync(newTransaction);
@@ -54,14 +59,32 @@ public class TransactionApplication
         var transactions =
             await database.Transactions
             .Where(x => x.CategoryId == categoryId)
+            .OrderByDescending(x => x.InsertDateTime)
             .ToListAsync();
 
-        if (transactions == null)
+        return transactions.Adapt<List<IndexViewModel>>();
+    }
+
+    public async Task<ResultContract<CategoryResultViewModel>> GetResultByCategoryIdAsync(Guid categoryId)
+    {
+        var transactions =
+            await database.Transactions
+            .Where(x => x.CategoryId == categoryId)
+            .OrderByDescending(x => x.InsertDateTime)
+            .ToListAsync();
+
+        var category = (await categoryApplication.GetAsync(categoryId)).Data;
+
+        if (category == null)
         {
             return (ErrorType.NotFound, Errors.NotFound);
         }
 
-        return transactions.Adapt<List<IndexViewModel>>();
+        return new CategoryResultViewModel()
+        {
+            Category = category,
+            Transactions = transactions.Adapt<List<IndexViewModel>>(),
+        };
     }
 
     public async Task<ResultContract<List<CategoryResultViewModel>>> GetAllGroupByCategoryAsync(Guid userId)
@@ -87,5 +110,27 @@ public class TransactionApplication
         }
 
         return result;
+    }
+
+    public async Task<ResultContract<(Guid, Guid)>> DeleteAsync(Guid id)
+    {
+        var transaction =
+            await database.Transactions.FirstOrDefaultAsync(x => x.Id == id);
+
+        if (transaction == null)
+        {
+            return (ErrorType.NotFound, Errors.NotFound);
+        }
+
+        var userId =
+            transaction.UserId;
+
+        var categoryId =
+            transaction.CategoryId;
+
+        database.Transactions.Remove(transaction);
+        await unitOfWork.SaveChangesAsync();
+
+        return (userId, categoryId);
     }
 }

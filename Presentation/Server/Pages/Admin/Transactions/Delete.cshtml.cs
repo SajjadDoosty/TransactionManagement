@@ -1,11 +1,12 @@
 using Application.Aggregates.Categories;
+using Application.Aggregates.Transactions;
 using Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Server.Pages.Admin.Categories;
+namespace Server.Pages.Admin.Transactions;
 
 public class DeleteModel
-    (CategoryApplication categoryApplication) : BasePageModel
+    (TransactionApplication transactionApplication) : BasePageModel
 {
     public async Task<IActionResult> OnGetAsync(Guid id)
     {
@@ -15,7 +16,7 @@ public class DeleteModel
         }
 
         var result =
-            await categoryApplication.DeleteAsync(id);
+            await transactionApplication.DeleteAsync(id);
 
         if (result.IsSuccessful == false)
         {
@@ -25,11 +26,11 @@ public class DeleteModel
         }
 
         var message =
-            string.Format(Resources.Messages.Successes.Deleted, Resources.DataDictionary.Category);
+            string.Format(Resources.Messages.Successes.Deleted, Resources.DataDictionary.Transaction);
 
         AddToastSuccess(message);
 
         return RedirectToPage("Index",
-            new { userId = result.Data });
+            new { userId = result.Data.Item1, categoryId = result.Data.Item2 });
     }
 }

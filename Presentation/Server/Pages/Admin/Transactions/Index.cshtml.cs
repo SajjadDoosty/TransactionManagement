@@ -10,7 +10,7 @@ public class IndexModel
     (TransactionApplication transactionApplication) : BasePageModel
 {
     [BindProperty]
-    public List<IndexViewModel> ViewModel { get; set; } = [];
+    public CategoryResultViewModel ViewModel { get; set; }
 
     public async Task<IActionResult> OnGetAsync(Guid? userId, Guid? categoryId)
     {
@@ -20,8 +20,11 @@ public class IndexModel
                 new { userId = userId });
         }
 
+        //var result =
+        //    await transactionApplication.GetByCategoryIdAsync(categoryId.Value);
+
         var result =
-            await transactionApplication.GetByCategoryIdAsync(categoryId.Value);
+            await transactionApplication.GetResultByCategoryIdAsync(categoryId.Value);
 
         ViewModel = result.Data!;
 

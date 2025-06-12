@@ -7,7 +7,7 @@ public static class MinLength
 	}
 
 
-    public const int Amount = 100;
+    public const decimal Amount = 100;
 
     public const int CellPhoneNumber = 13;
 	public const int CellPhoneNumberVerificationKey = 6;

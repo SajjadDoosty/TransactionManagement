@@ -1,0 +1,45 @@
+﻿@page
+@model Server.Pages.Admin.Charts.IndexModel
+
+@{
+    var userId = Request.Query["userId"];
+}
+
+
+<div class="row">
+    <div class="col-2 d-flex flex-column">
+        <a asp-page="../Users/Index" class="btn btn-secondary my-1">بازگشت</a>
+        <a asp-page="Index" asp-route-userId="@(userId)" class="btn btn-primary my-1">دسته‌بندی</a>
+        <a asp-page-handler="Daily" asp-route-userId="@(userId)" class="btn btn-primary my-1">روزانه</a>
+        <a class="btn btn-primary my-1">ماهانه</a>
+    </div>
+    <div class="col-10">
+        <canvas id="myChart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const labels = @Html.Raw(Model.LabelsJson);
+    const datasets = @Html.Raw(Model.DatasetsJson);
+
+    const data = {
+        labels: labels,
+        datasets: datasets
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    };
+
+    new Chart(document.getElementById('myChart'), config);
+</script>

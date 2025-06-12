@@ -40,4 +40,11 @@ public class Transaction : Entity
 
         return transaction;
     }
+
+
+    public void SetInsertDateTime(DateTimeOffset dateTime)
+    {
+        InsertDateTime =
+            dateTime.ToUnixTimeMilliseconds();
+    }
 }

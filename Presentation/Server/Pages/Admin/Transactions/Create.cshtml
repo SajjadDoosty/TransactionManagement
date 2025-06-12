@@ -1,0 +1,63 @@
+﻿@page
+@using Domain.Aggregates.Transactions.Enums
+@model Server.Pages.Admin.Transactions.CreateModel
+
+@{
+	var pageTitle =
+		$"{Resources.DataDictionary.CreateOf} {Resources.DataDictionary.Transactions}";
+
+	ViewData["Title"] = pageTitle;
+}
+
+
+<form method="post">
+	<div class="row my-0 my-sm-1 my-md-3">
+		<div class="col rounded-3 shadow-lg border border-2 col-12 p-3 col-md-8 offset-md-2 p-md-4">
+
+			<fieldset>
+				<legend class="text-center">
+					@(pageTitle)
+				</legend>
+
+				<hr class="mt-4">
+
+				<partial name="PartialViews/_DisplayPageMessages" />
+
+				<input asp-for="ViewModel.UserId" hidden>
+				<input asp-for="ViewModel.CategoryId" hidden>
+
+				<div class="mb-3">
+					<label asp-for="ViewModel.Amount" class="form-label"></label>
+					<input asp-for="ViewModel.Amount" class="form-control">
+					<span asp-validation-for="ViewModel.Amount" class="text-danger"></span>
+				</div>
+
+				<div class="mb-3">
+					<label asp-for="ViewModel.Type" class="form-label"></label>
+					<select asp-for="ViewModel.Type" class="form-select">
+						<option value="@(TransactionType.INCOME)">@(Resources.DataDictionary.Income)</option>
+						<option value="@(TransactionType.EXPENSE)">@(Resources.DataDictionary.Expense)</option>
+					</select>
+					<span asp-validation-for="ViewModel.Type" class="text-danger"></span>
+				</div>
+
+			</fieldset>
+
+			<div class="mb-3">
+				<button class="btn btn-primary w-100" type="submit">
+					<i class="mx-1 bi bi-plus-square"></i>
+					@(Resources.ButtonCaptions.Create)
+				</button>
+			</div>
+
+
+			<div class="mb-3">
+				<a asp-page="Index" asp-route-categoryId="@(Model.ViewModel.CategoryId)" class="btn btn-secondary w-100">
+					<i class="mx-1 bi bi-arrow-return-left"></i>
+					@(Resources.ButtonCaptions.Back)
+				</a>
+			</div>
+
+		</div>
+	</div>
+</form>

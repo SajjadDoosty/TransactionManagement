@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActivePriceListId" xml:space="preserve">
+    <value>شناسه لیست ‌قیمت فعال</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>آدرس</value>
+  </data>
+  <data name="AddressInformation" xml:space="preserve">
+    <value>اطلاعات آدرس ها</value>
+  </data>
+  <data name="AddressManagement" xml:space="preserve">
+    <value>مدیریت آدرس ها</value>
+  </data>
+  <data name="Addto" xml:space="preserve">
+    <value>افزودن به</value>
+  </data>
+  <data name="AdminPanel" xml:space="preserve">
+    <value>پنل مدیریت</value>
+  </data>
+  <data name="Amount" xml:space="preserve">
+    <value>هزینه</value>
+  </data>
+  <data name="BaseUnit" xml:space="preserve">
+    <value>واحد اصلی</value>
+  </data>
+  <data name="BasicInformation" xml:space="preserve">
+    <value>اطلاعات پایه</value>
+  </data>
+  <data name="Basket" xml:space="preserve">
+    <value>سبد خرید</value>
+  </data>
+  <data name="Branch" xml:space="preserve">
+    <value>شعبه</value>
+  </data>
+  <data name="Branches" xml:space="preserve">
+    <value>شعبه ها</value>
+  </data>
+  <data name="Catalog" xml:space="preserve">
+    <value>کاتالوگ</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>دسته‌بندی ها</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>دسته‌بندی</value>
+  </data>
+  <data name="CategoryId" xml:space="preserve">
+    <value>شناسه دسته‌بندی</value>
+  </data>
+  <data name="CellPhonenumber" xml:space="preserve">
+    <value>شماره همراه</value>
+  </data>
+  <data name="CheckoutCounters" xml:space="preserve">
+    <value>صندوقدار ها</value>
+  </data>
+  <data name="City" xml:space="preserve">
+    <value>شهر</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>تایید رمز</value>
+  </data>
+  <data name="Country" xml:space="preserve">
+    <value>کشور</value>
+  </data>
+  <data name="CreateOf" xml:space="preserve">
+    <value>ایجاد</value>
+  </data>
+  <data name="culture" xml:space="preserve">
+    <value>زبان</value>
+  </data>
+  <data name="Customer" xml:space="preserve">
+    <value>مشتری</value>
+  </data>
+  <data name="CustomerInformation" xml:space="preserve">
+    <value>اطلاعات مشتری</value>
+  </data>
+  <data name="Customers" xml:space="preserve">
+    <value>مشتری ها</value>
+  </data>
+  <data name="CustomerSearch" xml:space="preserve">
+    <value>جستجوی مشتری...</value>
+  </data>
+  <data name="CustomersInformation" xml:space="preserve">
+    <value>اطلاعات مشتری ها</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>داشبورد</value>
+  </data>
+  <data name="DeleteOf" xml:space="preserve">
+    <value>حذف </value>
+  </data>
+  <data name="Discount" xml:space="preserve">
+    <value>تخفیف</value>
+  </data>
+  <data name="DiscountCode" xml:space="preserve">
+    <value>کد تخفیف</value>
+  </data>
+  <data name="DiscountCodes" xml:space="preserve">
+    <value>کد های تخفیف</value>
+  </data>
+  <data name="DiscountFixed" xml:space="preserve">
+    <value>تخفیف مبلغی</value>
+  </data>
+  <data name="DiscountPercentage" xml:space="preserve">
+    <value>تخفیف درصدی</value>
+  </data>
+  <data name="DiscountType" xml:space="preserve">
+    <value>نوع تخفیف</value>
+  </data>
+  <data name="DownloadUrl" xml:space="preserve">
+    <value>لینک دانلود</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ایمیل</value>
+  </data>
+  <data name="EmailOrMobile" xml:space="preserve">
+    <value>ایمیل یا شماره همراه</value>
+  </data>
+  <data name="End" xml:space="preserve">
+    <value>پایان</value>
+  </data>
+  <data name="Family" xml:space="preserve">
+    <value>نام خانوادگی</value>
+  </data>
+  <data name="Features" xml:space="preserve">
+    <value>ویژگی‌ها</value>
+  </data>
+  <data name="FeaturesOf" xml:space="preserve">
+    <value>ویژگی های</value>
+  </data>
+  <data name="FullDescription" xml:space="preserve">
+    <value>توضیحات</value>
+  </data>
+  <data name="IconClass" xml:space="preserve">
+    <value>کلاس آیکون</value>
+  </data>
+  <data name="Id" xml:space="preserve">
+    <value>شناسه</value>
+  </data>
+  <data name="InsertDateTime" xml:space="preserve">
+    <value>زمان درج</value>
+  </data>
+  <data name="InsertedBy" xml:space="preserve">
+    <value>ایجاد شده توسط</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>فعال</value>
+  </data>
+  <data name="IsPinned" xml:space="preserve">
+    <value>سنجاق شده</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>ورود</value>
+  </data>
+  <data name="Logo" xml:space="preserve">
+    <value>لوگو</value>
+  </data>
+  <data name="Maximum" xml:space="preserve">
+    <value>حداکثر</value>
+  </data>
+  <data name="Minimum" xml:space="preserve">
+    <value>حداقل</value>
+  </data>
+  <data name="Mobile" xml:space="preserve">
+    <value>شماره همراه</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>نام</value>
+  </data>
+  <data name="NationalCode" xml:space="preserve">
+    <value>کد ملی</value>
+  </data>
+  <data name="NothingFound" xml:space="preserve">
+    <value>هیج موردی پیدا نشد...</value>
+  </data>
+  <data name="Order" xml:space="preserve">
+    <value>تراز</value>
+  </data>
+  <data name="OtpCode" xml:space="preserve">
+    <value>کد</value>
+  </data>
+  <data name="OwnerId" xml:space="preserve">
+    <value>کد مالک</value>
+  </data>
+  <data name="Parent" xml:space="preserve">
+    <value>والد</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>رمز عبور</value>
+  </data>
+  <data name="Picture" xml:space="preserve">
+    <value>تصویر</value>
+  </data>
+  <data name="Pictures" xml:space="preserve">
+    <value>عکس ها</value>
+  </data>
+  <data name="PicturesOf" xml:space="preserve">
+    <value>عکس های</value>
+  </data>
+  <data name="POS" xml:space="preserve">
+    <value>فروشگاهی</value>
+  </data>
+  <data name="PostalCode" xml:space="preserve">
+    <value>کد پستی</value>
+  </data>
+  <data name="Price" xml:space="preserve">
+    <value>قیمت</value>
+  </data>
+  <data name="PriceList" xml:space="preserve">
+    <value>لیست قیمت</value>
+  </data>
+  <data name="PriceLists" xml:space="preserve">
+    <value>لیست قیمت ها</value>
+  </data>
+  <data name="PriceListsOf" xml:space="preserve">
+    <value>لیست قیمت های</value>
+  </data>
+  <data name="Product" xml:space="preserve">
+    <value>کالا</value>
+  </data>
+  <data name="ProductFeature" xml:space="preserve">
+    <value>ویژگی محصول</value>
+  </data>
+  <data name="ProductFeatures" xml:space="preserve">
+    <value>ویژگی های محصول</value>
+  </data>
+  <data name="ProductId" xml:space="preserve">
+    <value>شناسه کالا</value>
+  </data>
+  <data name="ProductImage" xml:space="preserve">
+    <value>عکس کالا</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>کالا ها</value>
+  </data>
+  <data name="ProductSearch" xml:space="preserve">
+    <value>جستجو در کالا ها</value>
+  </data>
+  <data name="ProductType" xml:space="preserve">
+    <value>نوع محصول</value>
+  </data>
+  <data name="Province" xml:space="preserve">
+    <value>استان</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>ثبت نام</value>
+  </data>
+  <data name="Role" xml:space="preserve">
+    <value>نقش</value>
+  </data>
+  <data name="Searching" xml:space="preserve">
+    <value>در حال جستجو...</value>
+  </data>
+  <data name="Sellers" xml:space="preserve">
+    <value>فروشنده ها</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>تنظیمات</value>
+  </data>
+  <data name="Shippingaddress" xml:space="preserve">
+    <value>آدرس حمل و نقل</value>
+  </data>
+  <data name="ShortDescription" xml:space="preserve">
+    <value>خلاصه توضیحات</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>کد کالا</value>
+  </data>
+  <data name="Slug" xml:space="preserve">
+    <value>Slug</value>
+  </data>
+  <data name="Start" xml:space="preserve">
+    <value>شروع</value>
+  </data>
+  <data name="Store" xml:space="preserve">
+    <value>فروشگاه</value>
+  </data>
+  <data name="StoreId" xml:space="preserve">
+    <value>شناسه فروشگاه</value>
+  </data>
+  <data name="Stores" xml:space="preserve">
+    <value>فروشگاه ها</value>
+  </data>
+  <data name="SubCategories" xml:space="preserve">
+    <value>زیر دسته‌بندی ها</value>
+  </data>
+  <data name="SubCategoriesCount" xml:space="preserve">
+    <value>تعداد زیر دسته‌بندی ها</value>
+  </data>
+  <data name="SubCategoriesOf" xml:space="preserve">
+    <value>زیر دسته‌بندی های</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>عنوان</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>نوع</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>واحد</value>
+  </data>
+  <data name="UnitId" xml:space="preserve">
+    <value>شناسه واحد</value>
+  </data>
+  <data name="UnitRatio" xml:space="preserve">
+    <value>ضریب واحد</value>
+  </data>
+  <data name="Units" xml:space="preserve">
+    <value>واحد ها</value>
+  </data>
+  <data name="UpdateDateTime" xml:space="preserve">
+    <value>زمان ویرایش</value>
+  </data>
+  <data name="UpdatedBy" xml:space="preserve">
+    <value>ویرایش شده توسط</value>
+  </data>
+  <data name="UpdateOf" xml:space="preserve">
+    <value>ویرایش </value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>کاربر</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>نام کاربری</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>کاربرها</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>مقدار</value>
+  </data>
+  <data name="Actions" xml:space="preserve">
+    <value>عملیات</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>ویرایش</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>ایجاد</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>بازگشت</value>
+  </data>
+</root>

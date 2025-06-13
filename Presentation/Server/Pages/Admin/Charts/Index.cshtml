@@ -11,7 +11,7 @@
         <a asp-page="../Users/Index" class="btn btn-secondary my-1">بازگشت</a>
         <a asp-page="Index" asp-route-userId="@(userId)" class="btn btn-primary my-1">دسته‌بندی</a>
         <a asp-page-handler="Daily" asp-route-userId="@(userId)" class="btn btn-primary my-1">روزانه</a>
-        <a class="btn btn-primary my-1">ماهانه</a>
+        <a asp-page-handler="Monthly" asp-route-userId="@(userId)" class="btn btn-primary my-1">ماهانه</a>
     </div>
     <div class="col-10">
         <canvas id="myChart"></canvas>

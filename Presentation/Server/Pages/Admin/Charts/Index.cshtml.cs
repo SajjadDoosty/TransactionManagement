@@ -78,8 +78,8 @@ public class IndexModel
 
         var labels = 
             grouped?
-            .Select(r => r.Key.ToString("yyyy/MM/dd", new CultureInfo("fa-IR"))).
-            TakeLast(12)
+            .Select(r => r.Key.ToString("yyyy/MM/dd", new CultureInfo("fa-IR")))
+            .TakeLast(30)
             .ToList();
 
         var incomeData = 
@@ -88,6 +88,59 @@ public class IndexModel
             .ToList();
 
         var expenseData = 
+            grouped?
+            .Select(g => g.Where(x => x.Type == TransactionType.EXPENSE).Sum(x => x.Amount))
+            .ToList();
+
+        var datasets = new List<object>
+        {
+            new {
+                label = Resources.DataDictionary.Income,
+                data = incomeData,
+                backgroundColor = "rgba(75, 192, 192, 0.5)",
+                borderColor = "rgba(75, 192, 192, 1)",
+                borderWidth = 1
+            },
+            new {
+                label = Resources.DataDictionary.Expense,
+                data = expenseData,
+                backgroundColor = "rgba(255, 99, 132, 0.5)",
+                borderColor = "rgba(255, 99, 132, 1)",
+                borderWidth = 1
+            }
+        };
+
+        LabelsJson = JsonSerializer.Serialize(labels);
+        DatasetsJson = JsonSerializer.Serialize(datasets);
+
+        return Page();
+    }
+
+    public async Task<IActionResult> OnGetMonthlyAsync(Guid userId)
+    {
+        if (userId == Guid.Empty)
+        {
+            return RedirectToPage("../Users/Index");
+        }
+
+        var transactions = (await transactionApplication.GetAllAsync(userId)).Data;
+
+        var grouped = transactions?.Transactions
+            .GroupBy(t => new { t.InsertDateTimes.Year, t.InsertDateTimes.Month })
+            .OrderBy(g => g.Key.Year).ThenBy(g => g.Key.Month)
+            .TakeLast(12)
+            .ToList();
+
+        var labels = grouped
+            .Select(g => new DateTime(g.Key.Year, g.Key.Month, 1).ToString("yyyy/MM", new CultureInfo("fa-IR")))
+            .ToList();
+
+        var incomeData =
+            grouped?
+            .Select(g => g.Where(x => x.Type == TransactionType.INCOME).Sum(x => x.Amount))
+            .ToList();
+
+        var expenseData =
             grouped?
             .Select(g => g.Where(x => x.Type == TransactionType.EXPENSE).Sum(x => x.Amount))
             .ToList();

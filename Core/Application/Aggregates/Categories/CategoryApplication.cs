@@ -14,7 +14,7 @@ public class CategoryApplication
     public async Task<ResultContract> CreateAsync(CreateViewModel viewModel)
     {
         var isExist = await database.Categories.AnyAsync
-            (x => x.Title == viewModel.Title);
+            (x => x.Title == viewModel.Title && x.UserId == viewModel.UserId);
 
         if (isExist)
         {

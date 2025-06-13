@@ -50,6 +50,6 @@ public class IndexModel
             Type = TransactionType.INCOME,
             UserId = Guid.Parse("F29E9216-5380-45EB-8F34-F45F1A5D0850"),
             CategoryId = Guid.Parse("AD123497-5246-4911-8C9D-0B1A8A386682"),
-        }, new DateTimeOffset(new DateTime(2025, 6, 12)));
+        }, new DateTimeOffset(new DateTime(2025, 7, 12)));
     }
 }

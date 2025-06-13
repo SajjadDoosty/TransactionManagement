@@ -69,7 +69,7 @@ public class CreateViewModel
 
     // **********
     [Display
-        (Name = nameof(DataDictionary.Email),
+        (Name = nameof(DataDictionary.Role),
         ResourceType = typeof(DataDictionary))]
 
     public RoleType Role { get; set; }
